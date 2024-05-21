@@ -1,36 +1,61 @@
 # LEAD-SCORING-CASE-STUDY
 
 ### This a project on LEAD SCORING CASE STUDY
-## PROBLEM STATEMENT
-##### 
-An education company named X Education sells online courses to industry professionals. On any given day, many professionals who are interested in the courses land on their website and browse for courses. 
 
- 
+## Project Overview
+X Education, an online course provider, seeks to improve its lead conversion rate, which currently stands at 30%. The goal is to develop a model that assigns a lead score to potential customers, indicating their likelihood of conversion. This will help the sales team focus on high-potential leads, aiming to achieve a target conversion rate of 80%.
 
-##### The company markets its courses on several websites and search engines like Google. Once these people land on the website, they might browse the courses or fill up a form for the course or watch some videos. When these people fill up a form providing their email address or phone number, they are classified to be a lead. Moreover, the company also gets leads through past referrals. Once these leads are acquired, employees from the sales team start making calls, writing emails, etc. Through this process, some of the leads get converted while most do not. The typical lead conversion rate at X education is around 30%. 
+## Problem Statement
+X Education receives leads through various channels including website visits, referrals, and marketing campaigns. Despite acquiring numerous leads, the conversion rate is low. The company wants to identify 'Hot Leads'—those with a higher probability of converting into paying customers. Your task is to build a model that assigns lead scores, prioritizing leads with higher conversion chances.
 
+## Dataset
+The dataset contains approximately 9000 data points with attributes such as Lead Source, Total Time Spent on Website, Total Visits, Last Activity, etc. The target variable is 'Converted', where 1 indicates conversion and 0 indicates no conversion.
 
-#####  Now, although X Education gets a lot of leads, its lead conversion rate is very poor. For example, if, say, they acquire 100 leads in a day, only about 30 of them are converted. To make this process more efficient, the company wishes to identify the most potential leads, also known as ‘Hot Leads’. If they successfully identify this set of leads, the lead conversion rate should go up as the sales team will now be focusing more on communicating with the potential leads rather than making calls to everyone.
+## Steps Followed
 
-##### X Education has appointed you to help them select the most promising leads, i.e. the leads that are most likely to convert into paying customers. The company requires you to build a model wherein you need to assign a lead score to each of the leads such that the customers with a higher lead score have a higher conversion chance and the customers with a lower lead score have a lower conversion chance. The CEO, in particular, has given a ballpark of the target lead conversion rate to be around 80%.
+### 1. Reading Data
+Load the dataset into a pandas DataFrame for analysis and model building.
 
-## DATA
-#### You have been provided with a leads dataset from the past with around 9000 data points. This dataset consists of various attributes such as Lead Source, Total Time Spent on Website, Total Visits, Last Activity, etc. which may or may not be useful in ultimately deciding whether a lead will be converted or not. The target variable, in this case, is the column ‘Converted’ which tells whether a past lead was converted or not wherein 1 means it was converted and 0 means it wasn’t converted. You can learn more about the dataset from the data dictionary provided in the zip folder at the end of the page. Another thing that you also need to check out are the levels present in the categorical variables. Many of the categorical variables have a level called 'Select' which needs to be handled because it is as good as a null value (think why?).
+### 2. Cleaning Data
+Handle missing values, remove duplicates, and address 'Select' values in categorical variables, treating them as null values.
 
-## GOALS OF THE CASE STUDY
+### 3. Exploratory Data Analysis (EDA)
+Analyze data distributions, relationships between features, and identify key attributes influencing lead conversion.
 
-#### There are quite a few goals for this case study:
+### 4. Creating Dummy Variables
+Convert categorical variables into numerical ones using dummy variables.
 
-1. Build a logistic regression model to assign a lead score between 0 and 100 to each of the leads which can be used by the company to target potential leads. A higher score would mean that the lead is hot, i.e. is most likely to convert whereas a lower score would mean that the lead is cold and will mostly not get converted.
-   
-2. There are some more problems presented by the company which your model should be able to adjust to if the company's requirement changes in the future so you will need to handle these as well. These problems are provided in a separate doc file. Please fill it based on the logistic regression model you got in the first step. Also, make sure you include this in your final PPT where you'll make recommendations.
+### 5. Splitting Data
+Split the dataset into training and testing sets (70:30 ratio) to evaluate model performance.
 
-## Results Expected
-1. A well-commented Jupyter notebook with at least the logistic regression model, the conversion predictions and evaluation metrics.
-2. The word document filled with solutions to all the problems.
-3. The overall approach of the analysis in a presentation.
-4. Mention the problem statement and the analysis approach briefly
-5. Explain the results in business terms
-6. Include visualisations and summarise the most important results in the presentation
-7. A brief summary report in 500 words explaining how you proceeded with the assignment and the learnings that you gathered.
+### 6. Building Model
+Develop a logistic regression model to assign lead scores based on provided attributes.
+
+### 7. Making Predictions
+Use the trained model to predict lead conversions on the test set.
+
+### 8. Model Evaluation
+Evaluate model performance using metrics such as accuracy, precision, recall, and F1-score.
+
+### 9. ROC Curve
+Plot the ROC curve to visualize model performance and determine the optimal threshold for lead scoring.
+
+### 10. Prediction on Test Set
+Apply the model to the test set to predict lead conversions and compare with actual outcomes.
+
+### 11. Precision-Recall
+Analyze the precision-recall tradeoff to ensure the model maintains a high conversion rate while identifying hot leads.
+
+## File Details
+- Lead Score Case Study Aayushi Meenu.ipynb: Jupyter notebook containing code and data analysis.
+- Assignment Subjective Questions.pdf: Document answering subjective questions related to the case study.
+- Lead Score Case Study.pdf: Final presentation of the case study findings.
+- Leads.csv: Dataset containing lead information.
+- Leads Data Dictionary.xlsx: Data dictionary detailing dataset attributes.
+- Summary.pdf: Summary of the processes and findings from the Jupyter notebook.
+
+## Summary
+The logistic regression model developed predicts the probability of lead conversion, with an optimal cut-off probability set at 0.3. The model achieves an accuracy of 84.55% on the test data, with a sensitivity of 85.88% and precision of 77%. This model will help X Education focus on high-potential leads, aiming to increase the overall lead conversion rate to 80%.
+
+For more detailed analysis and results, refer to the Jupyter notebook and accompanying PDF documents.
  
